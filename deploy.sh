@@ -13,12 +13,12 @@ push_branch=gh-pages # 推送的分支
 npm run build
 
 # 进入生成的文件夹
-npm run build
+cd $dist_path
 
 git init
 git add -A
 git commit -m "deploy, $commit_info"
-git push -f $push_addr HEAD:$push_branch
+git push -f $push_addr master:$push_branch
 
 cd -
-rm -rf $dist_path
+# rm -rf $dist_path

@@ -14,11 +14,11 @@ const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
   theme: 'vdoing', // 使用npm主题包
   // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
-
+  base: '/donot-eat-fish/',
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "不爱吃鱼的bobo",
+      title: "不爱吃鱼的boboooooo",
       description: 'web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。',
     }
   },
