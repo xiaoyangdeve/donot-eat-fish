@@ -18,8 +18,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "不爱吃鱼的boboooooo",
-      description: 'web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。',
+      title: "不爱吃鱼的bobo",
+      description: '大数据技术博客,专注大数据学习与总结。Spark,Iceberg,Flink,Hadoop,Hive,Kafka,HBase,ES等技术文章。',
     }
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
@@ -31,7 +31,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       { text: '首页', link: '/' },
       {
         text: '大数据',
-        link: '/web/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        link: '/bigdata/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
@@ -41,9 +41,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
             ],
           },
           {
-            text: '学习笔记',
+            text: 'Spark',
             items: [
-              { text: '《JavaScript教程》', link: '/note/javascript/' },
               { text: '《JavaScript高级程序设计》', link: '/note/js/' },
               { text: '《ES6 教程》', link: '/note/es6/' },
               { text: '《Vue》', link: '/note/vue/' },
@@ -66,11 +65,43 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
               },
             ],
           },
+          {
+            text: 'Flink',
+            items: [
+              { text: '《JavaScript高级程序设计》', link: '/note/js/' },
+              { text: '《ES6 教程》', link: '/note/es6/' },
+              { text: '《Vue》', link: '/note/vue/' },
+              { text: '《React》', link: '/note/react/' },
+              {
+                text: '《TypeScript 从零实现 axios》',
+                link: '/note/typescript-axios/',
+              },
+              {
+                text: '《Git》',
+                link: '/note/git/',
+              },
+              {
+                text: 'TypeScript',
+                link: '/pages/51afd6/',
+              },
+              {
+                text: 'JS设计模式总结',
+                link: '/pages/4643cd/',
+              },
+            ],
+          },
+          {
+            text: 'Alluxio',
+            items: [
+              { text: '基本原理', link: '/bigdata/alluxio/' },
+              { text: '企业应用实践', link: '/bigdata/alluxio_app/' },
+            ],
+          },
         ],
       },
       {
-        text: '页面',
-        link: '/ui/',
+        text: '数据湖',
+        link: '/data_lake/',
         items: [
           { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
           { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
@@ -118,7 +149,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
-    // logo: '/img/logo.png', // 导航栏logo
+    logo: '/img/logo.jpg', // 导航栏logo
     // repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
@@ -172,9 +203,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://fastly.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
-      name: 'Evan Xu',
-      slogan: '前端界的小学生',
+      avatar: '/img/log.jpg',
+      name: 'Bobo',
+      slogan: '大数据幼稚园',
     },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)

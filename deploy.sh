@@ -21,4 +21,4 @@ git commit -m "deploy, $commit_info"
 git push -f $push_addr master:$push_branch
 
 cd -
-# rm -rf $dist_path
+rm -rf $dist_path
