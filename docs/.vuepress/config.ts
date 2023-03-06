@@ -35,66 +35,19 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
-            text: '大数据文章',
-            items: [
-              { text: 'JavaScript', link: '/pages/8143cc480faf9a11/' },
-            ],
-          },
-          {
             text: 'Spark',
             items: [
-              { text: '《JavaScript高级程序设计》', link: '/note/js/' },
-              { text: '《ES6 教程》', link: '/note/es6/' },
-              { text: '《Vue》', link: '/note/vue/' },
-              { text: '《React》', link: '/note/react/' },
-              {
-                text: '《TypeScript 从零实现 axios》',
-                link: '/note/typescript-axios/',
-              },
-              {
-                text: '《Git》',
-                link: '/note/git/',
-              },
-              {
-                text: 'TypeScript',
-                link: '/pages/51afd6/',
-              },
-              {
-                text: 'JS设计模式总结',
-                link: '/pages/4643cd/',
-              },
             ],
           },
           {
             text: 'Flink',
             items: [
-              { text: '《JavaScript高级程序设计》', link: '/note/js/' },
-              { text: '《ES6 教程》', link: '/note/es6/' },
-              { text: '《Vue》', link: '/note/vue/' },
-              { text: '《React》', link: '/note/react/' },
-              {
-                text: '《TypeScript 从零实现 axios》',
-                link: '/note/typescript-axios/',
-              },
-              {
-                text: '《Git》',
-                link: '/note/git/',
-              },
-              {
-                text: 'TypeScript',
-                link: '/pages/51afd6/',
-              },
-              {
-                text: 'JS设计模式总结',
-                link: '/pages/4643cd/',
-              },
             ],
           },
           {
             text: 'Alluxio',
             items: [
               { text: '基本原理', link: '/bigdata/alluxio/' },
-              { text: '企业应用实践', link: '/bigdata/alluxio_app/' },
             ],
           },
         ],
@@ -103,35 +56,29 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '数据湖',
         link: '/data_lake/',
         items: [
-          { text: 'HTML', link: '/pages/8309a5b876fc95e3/' },
-          { text: 'CSS', link: '/pages/0a83b083bdf257cb/' },
+          { text: 'iceberg', link: '' },
+          { text: 'hudi', link: '' },
         ],
       },
       {
-        text: '技术',
-        link: '/technology/',
+        text: 'Java语言',
         items: [
-          { text: '技术文档', link: '/pages/9a7ee40fc232253e/' },
-          { text: 'GitHub技巧', link: '/pages/4c778760be26d8b3/' },
-          { text: 'Nodejs', link: '/pages/117708e0af7f0bd9/' },
-          { text: '博客搭建', link: '/pages/41f87d890d0a02af/' },
+          {text: 'Java语言基础', link: '/java/javase/'},
+          {text: 'Java虚拟机介绍', link: '/java/jvm/'},
+          {text: '类加载机制', link: '/java/classloader/'},
         ],
       },
       {
-        text: '更多',
+        text: '数据分析',
         link: '/more/',
         items: [
-          { text: '学习', link: '/pages/f2a556/' },
-          { text: '面试', link: '/pages/aea6571b7a8bae86/' },
-          { text: '心情杂货', link: '/pages/2d615df9a36a98ed/' },
-          { text: '实用技巧', link: '/pages/baaa02/' },
+        
           // { text: '友情链接', link: '/friends/' },
         ],
       },
-      { text: '关于', link: '/about/' },
       {
         text: '收藏',
-        link: '/pages/beb6c0bd8a66cea6/',
+        // link: '',
         // items: [
         //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
         //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
@@ -202,11 +149,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     },
 
     // 博主信息 (显示在首页侧边栏)
-    blogger: {
-      avatar: '/img/log.jpg',
-      name: 'Bobo',
-      slogan: '大数据幼稚园',
-    },
+    // blogger: {
+    //   avatar: 'https://file02.xdfsat.com/dasdf-app/7a512c5f23e7e00a502b8dcefc8baf52',
+    //   name: 'Bobo',
+    //   slogan: '大数据幼稚园',
+    // },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
     social: {

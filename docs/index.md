@@ -11,15 +11,15 @@ features: # 可选的
   - title: 大数据
     details: Spark、Flink、Hive相关文章
     link: /bigdata/ # 可选
-    imgUrl: /img/web.png # 可选
+    imgUrl: /img/bigdata/bigdata.png # 可选
   - title: 数据湖
     details: Iceberg、Hudi相关技术
     link: /data_lake/
-    imgUrl: /img/ui.png
+    imgUrl: /img/data_lake/data_lake.png
   - title: 数据分析
     details: 数据分析、数据挖掘等文章
     link: /data_analy/
-    imgUrl: /img/other.png
+    imgUrl: /img/data_analysis/data_analysis.jpeg
   # - title: Java
   #   details: Java基础、JVM等文章
   #   link: /java/
