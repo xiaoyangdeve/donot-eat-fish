@@ -1,0 +1,78 @@
+.idea/
+*.iml
+target/
+logs/
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+data-system/logs/
+/logs/
+
+# eclipse ignore
+*.settings/
+.project
+.classpath
+*.DS_Store
+LOG_FILE_NAME_IS_UNDEFINED*
+#.gitignore
+bin/
+logs/
+/.project
+node_modules/
+node_modules/@vuepress
+node_modules/@vuepress/core
+.node_modules/
+*.mjs
+
+# node modules
+node_modules
+
+# MacOS desktop services store
+.DS_Store
+
+# Log files
+*.log
+
+# Meta files
+TODOs.md
+
+# Editors
+.idea
+
+# VuePress temp directory
+.temp
+
+# Docs dist directory
+/vuepress
+
+# Typescript build dist
+packages/@vuepress/shared-utils/lib/
+packages/@vuepress/shared-utils/types/
+

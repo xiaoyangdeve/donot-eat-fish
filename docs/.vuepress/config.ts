@@ -37,6 +37,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           {
             text: 'Spark',
             items: [
+              { text: 'Spark基本原理', link: '/bigdata/spark_core/' },
             ],
           },
           {
@@ -56,12 +57,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '数据湖',
         link: '/data_lake/',
         items: [
-          { text: 'iceberg', link: '' },
-          { text: 'hudi', link: '' },
+          { text: 'iceberg', link: '/data_lake/iceberg/' },
+          { text: 'hudi', link: '/data_lake/hudi/' },
         ],
       },
       {
         text: 'Java语言',
+        link: '/java/',
         items: [
           {text: 'Java语言基础', link: '/java/javase/'},
           {text: 'Java虚拟机介绍', link: '/java/jvm/'},
@@ -69,13 +71,30 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: '数据分析',
-        link: '/more/',
+        text: '数据治理',
+        link: '/data_management/',
         items: [
         
           // { text: '友情链接', link: '/friends/' },
         ],
       },
+      {
+        text: 'A/B测试',
+        link: '/ab_test/',
+        items: [
+        
+          // { text: '友情链接', link: '/friends/' },
+        ],
+      },
+      {
+        text: '数据分析',
+        link: '/data_analysis/',
+        items: [
+        
+          // { text: '友情链接', link: '/friends/' },
+        ],
+      },
+      
       {
         text: '收藏',
         // link: '',
@@ -297,26 +316,26 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
-    [
-      'vuepress-plugin-comment', // 评论
-      {
-        choosen: 'gitalk',
-        options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-          repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'xugaoyi', // GitHub仓库所有者
-          admin: ['xugaoyi'], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-          title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-          labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-          body:
-            '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
-        },
-      },
-    ],
+    // [
+    //   'vuepress-plugin-comment', // 评论
+    //   {
+    //     choosen: 'gitalk',
+    //     options: {
+    //       clientID: 'a6e1355287947096b88b',
+    //       clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
+    //       repo: 'blog-gitalk-comment', // GitHub 仓库
+    //       owner: 'xugaoyi', // GitHub仓库所有者
+    //       admin: ['xugaoyi'], // 对仓库有写权限的人
+    //       // distractionFreeMode: true,
+    //       pagerDirection: 'last', // 'first'正序 | 'last'倒序
+    //       id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
+    //       title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
+    //       labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
+    //       body:
+    //         '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
+    //     },
+    //   },
+    // ],
     [
       '@vuepress/last-updated', // "上次更新"时间格式
       {
