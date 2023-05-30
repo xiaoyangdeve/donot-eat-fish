@@ -51,6 +51,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
               { text: '基本原理', link: '/bigdata/alluxio/' },
             ],
           },
+          {
+            text: 'Trino',
+            items: [
+              { text: 'Trino(Presto)相关', link: '/bigdata/trino/' },
+            ],
+          },
         ],
       },
       {
