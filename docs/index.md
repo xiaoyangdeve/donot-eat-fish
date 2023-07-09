@@ -8,17 +8,17 @@ tagline: 大数据小学僧，点滴。
 # bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
 features: # 可选的
-  - title: 大数据
-    details: Spark、Flink、Hive相关文章
-    link: /bigdata/ # 可选
-    imgUrl: /img/bigdata/bigdata.png # 可选
-  - title: 数据湖
-    details: Iceberg、Hudi相关技术
-    link: /data_lake/
+  - title: 数据管理
+    details: 数据集成、数据治理相关资料
+    link: /dm/ # 可选
+    imgUrl: /img/data_management/data_management.png # 可选
+  - title: 数据架构
+    details: 数据中台、数据平台、数据湖仓相关技术
+    link: /data_structure/
     imgUrl: /img/data_lake/data_lake.png
-  - title: 数据分析
-    details: 数据分析、数据挖掘等文章
-    link: /data_analy/
+  - title: 数据应用
+    details: 用户画像、AB实验、OLAP、推荐系统、模型算法、归因算法等相关
+    link: /data_app/
     imgUrl: /img/data_analysis/data_analysis.jpeg
   # - title: Java
   #   details: Java基础、JVM等文章

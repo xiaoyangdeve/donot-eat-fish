@@ -8,7 +8,7 @@ import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
 
-const DOMAIN_NAME = 'xugaoyi.com' // 域名 (不带https)
+const DOMAIN_NAME = 'donot.eat.fish.bobo.com' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
@@ -30,86 +30,75 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '大数据',
-        link: '/bigdata/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        text: '数据管理',
+        link: '/dm/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
-            text: 'Spark',
-            items: [
-              { text: 'Spark基本原理', link: '/bigdata/spark_core/' },
-            ],
+            text: '数据集成',
+            link: '/pages/193f87/'
           },
           {
-            text: 'Flink',
+            text: '数据治理',
+            link: '/pages/3cb85c/'
+          }
+        ],
+      },
+      {
+        text: '数据架构',
+        link: '/data_structure/',
+        items: [
+          { text: '数据中台', link: '/pages/adcac1/' },
+          { text: '数据平台',
             items: [
+              { text: 'Spark', link: '/pages/8e0c8a/' },
+              { text: 'Flink', link: '/pages/3b52da/' },
+              { text: 'Trino', link: '/pages/3e0102/' },
+              { text: 'Alluxio', link: '/pages/342fddfd/' },
             ],
           },
-          {
-            text: 'Alluxio',
+          { text: '数据湖仓', link: '/pages/dca12a/' },
+        ],
+      },
+      {
+        text: '数据应用',
+        link: '/data_app/',
+        items: [
+          { text: '用户画像', link: '/pages/81942f/' },
+          { text: 'AB实验', link: '/pages/3f2c9a/' },
+          { text: 'OLAP', link: '/pages/855b59/' },
+          { text: '数据分析', link: '/pages/018612312394/' },
+          // { text: '推荐系统', link: '/pages/adcac1/' },
+          // { text: '算法模型', link: '/pages/adcac1/' },
+          // { text: '知识图谱', link: '/pages/adcac1/' },
+        ],
+      },
+      {
+        text: '编程语言',
+        link: '/programming/',
+        items: [
+          {text: 'Java', 
             items: [
-              { text: '基本原理', link: '/bigdata/alluxio/' },
-            ],
+              // {text: 'Java语言基础', link: '/java/javase/'},
+              {text: 'Java虚拟机介绍', link: '/pages/018694/'},
+              // {text: '类加载机制', link: '/java/classloader/'},
+            ]
           },
-          {
-            text: 'Trino',
-            items: [
-              { text: 'Trino(Presto)相关', link: '/bigdata/trino/' },
-            ],
-          },
-        ],
-      },
-      {
-        text: '数据湖',
-        link: '/data_lake/',
-        items: [
-          { text: 'iceberg', link: '/data_lake/iceberg/' },
-          { text: 'hudi', link: '/data_lake/hudi/' },
-        ],
-      },
-      {
-        text: 'Java语言',
-        link: '/java/',
-        items: [
-          {text: 'Java语言基础', link: '/java/javase/'},
-          {text: 'Java虚拟机介绍', link: '/java/jvm/'},
-          {text: '类加载机制', link: '/java/classloader/'},
-        ],
-      },
-      {
-        text: '数据治理',
-        link: '/data_management/',
-        items: [
-        
-          // { text: '友情链接', link: '/friends/' },
-        ],
-      },
-      {
-        text: 'A/B测试',
-        link: '/ab_test/',
-        items: [
-        
-          // { text: '友情链接', link: '/friends/' },
-        ],
-      },
-      {
-        text: '数据分析',
-        link: '/data_analysis/',
-        items: [
-        
-          // { text: '友情链接', link: '/friends/' },
+          // {text: 'Scala', link: '/java/jvm/'},
+          // {text: '类加载机制', link: '/java/classloader/'},
         ],
       },
       
-      {
-        text: '收藏',
-        // link: '',
-        // items: [
-        //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
-        //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
-        //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
-        // ],
-      },
+      
+      // {
+      //   text: '收藏',
+      //   // link: '',
+      //   // items: [
+      //   //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
+      //   //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
+      //   //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
+      //   // ],
+      // },
       {
         text: '索引',
         link: '/archives/',
@@ -169,8 +158,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'xugaoyi', // 必需
-      link: 'https://github.com/xugaoyi', // 可选的
+      name: '不爱吃鱼的bobo', // 必需
+      // link: 'https://github.com/xugaoyi', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
