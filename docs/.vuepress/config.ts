@@ -35,7 +35,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         items: [
           // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
           {
-            text: '数据集成',
+            text: '数字化转型',
             link: '/pages/193f87/'
           },
           {
