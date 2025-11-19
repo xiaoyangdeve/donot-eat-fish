@@ -2,11 +2,11 @@
   "name": "theme-vdoing-blog",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs",
-    "build": "node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs",
-    "deploy": "bash deploy.sh",
-    "editFm": "node utils/editFrontmatter.js",
-    "baiduPush": "node utils/baiduPush.js https://xugaoyi.com && bash baiduPush.sh",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs",
+    "deploy": "NODE_OPTIONS=--openssl-legacy-provider bash deploy.sh",
+    "editFm": "NODE_OPTIONS=--openssl-legacy-provider node utils/editFrontmatter.js",
+    "baiduPush": "NODE_OPTIONS=--openssl-legacy-provider node utils/baiduPush.js https://xugaoyi.com && bash baiduPush.sh",
     "publish": "cd ./vdoing && npm publish && cd .. && yarn updateTheme",
     "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D"
   },
