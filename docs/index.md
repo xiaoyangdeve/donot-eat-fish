@@ -2,16 +2,20 @@
 home: true
 # heroImage: /img/web.png
 heroText: 不爱吃鱼的bobo
-tagline: 大数据小学僧，点滴。
+tagline: 一个数据人，一个AI人，一个大数据人。
 # actionText: 立刻进入 →
 # actionLink: /bigdata/
 # bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
 features: # 可选的
-  - title: 数据管理
-    details: 数据集成、数据治理相关资料
-    link: /dm/ # 可选
-    imgUrl: /img/data_management/data_management.png # 可选
+  # - title: 数据管理
+  #   details: 数据集成、数据治理相关资料
+  #   link: /dm/ # 可选
+  #   imgUrl: /img/data_management/data_management.png # 可选
+  - title: AI大模型
+    details: Transformer、Agent、RAG等
+    link: /ai/
+    imgUrl: /img/ai_big_model/ai_logo.jpg
   - title: 数据架构
     details: 数据中台、数据平台、数据湖仓相关技术
     link: /data_structure/
