@@ -1,12 +1,22 @@
 {
   "name": "theme-vdoing-blog",
   "version": "1.0.0",
+  "private": true,
+  "packageManager": "npm@10.9.7",
+  "engines": {
+    "node": ">=20 <23",
+    "npm": ">=10 <11"
+  },
   "scripts": {
     "dev": "NODE_OPTIONS=--openssl-legacy-provider node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs",
     "build": "NODE_OPTIONS=--openssl-legacy-provider node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs",
-    "deploy": "NODE_OPTIONS=--openssl-legacy-provider bash deploy.sh",
+    "check": "node scripts/check-site.js",
+    "check:dist": "node scripts/check-dist.js",
+    "verify": "npm run check && npm run build && npm run check:dist",
+    "deploy": "bash deploy.sh",
+    "deploy:dry-run": "DEPLOY_DRY_RUN=1 bash deploy.sh",
     "editFm": "NODE_OPTIONS=--openssl-legacy-provider node utils/editFrontmatter.js",
-    "baiduPush": "NODE_OPTIONS=--openssl-legacy-provider node utils/baiduPush.js https://xugaoyi.com && bash baiduPush.sh",
+    "baiduPush": "node utils/baiduPush.js && bash baiduPush.sh",
     "publish": "cd ./vdoing && npm publish && cd .. && yarn updateTheme",
     "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D"
   },

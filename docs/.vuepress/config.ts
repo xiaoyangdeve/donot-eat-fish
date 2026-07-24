@@ -8,13 +8,14 @@ import dayjs from 'dayjs'
 import baiduCode from './config/baiduCode' // 百度统计hm码
 import htmlModules from './config/htmlModules' // 自定义插入的html块
 
-const DOMAIN_NAME = 'donot.eat.fish.bobo.com' // 域名 (不带https)
-const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
+const DOMAIN_NAME = 'xiaoyangdeve.github.io' // GitHub Pages 默认域名（不带 https）
+const BASE_PATH = '/donot-eat-fish/'
+const WEB_SITE = `https://${DOMAIN_NAME}`
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
   theme: 'vdoing', // 使用npm主题包
   // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
-  base: '/donot-eat-fish/',
+  base: BASE_PATH,
   locales: {
     '/': {
       lang: 'zh-CN',
@@ -122,11 +123,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.jpg', // 导航栏logo
-    // repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
+    repo: 'xiaoyangdeve/donot-eat-fish', // 导航栏右侧生成 GitHub 链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
-    // docsBranch: 'master', // 编辑的文件所在分支，默认master。 注意：如果你的分支是main则修改为main
+    docsBranch: 'main',
     editLinks: true, // 启用编辑
     editLinkText: '编辑',
 
@@ -192,7 +193,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         {
           iconClass: 'icon-github',
           title: 'GitHub',
-          link: '',
+          link: 'https://github.com/xiaoyangdeve/donot-eat-fish',
         }
       ],
     },
@@ -284,7 +285,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           },
           {
             title: '通过百度搜索本站的',
-            frontUrl: `https://www.baidu.com/s?wd=site%3A${DOMAIN_NAME}%20`,
+            frontUrl: `https://www.baidu.com/s?wd=site%3A${DOMAIN_NAME}${BASE_PATH}%20`,
           },
         ],
       }
