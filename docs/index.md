@@ -21,7 +21,7 @@ features: # 可选的
     link: /project-management/
     imgUrl: /img/home/project-management.jpg
   - title: 编程语言
-    details: Java、Python及运行时基础
+    details: Java、JVM及运行时基础
     link: /programming/
     imgUrl: /img/home/programming-languages.jpg
 

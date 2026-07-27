@@ -43,7 +43,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: 'AI大模型',
         link: '/ai/',
         items: [
-          { text: 'Agent', link: '/pages/16b94c/' },
+          { text: 'Agent', link: '/ai/agent/' },
         ],
       },
       {
@@ -58,15 +58,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '编程语言',
         link: '/programming/',
         items: [
-          {text: 'Java', 
-            items: [
-              // {text: 'Java语言基础', link: '/java/javase/'},
-              {text: 'Java虚拟机介绍', link: '/pages/018694/'},
-              // {text: '类加载机制', link: '/java/classloader/'},
-            ]
-          },
-          // {text: 'Scala', link: '/java/jvm/'},
-          // {text: '类加载机制', link: '/java/classloader/'},
+          { text: 'Java 与 JVM', link: '/programming/java/' },
         ],
       },
       
