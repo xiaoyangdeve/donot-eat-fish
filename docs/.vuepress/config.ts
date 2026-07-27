@@ -94,6 +94,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     logo: '/img/logo.jpg', // 导航栏logo
     repo: 'xiaoyangdeve/donot-eat-fish', // 导航栏右侧生成 GitHub 链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
+    smoothScroll: true, // 页面内锚点切换使用平滑滚动
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
     docsBranch: 'main',
@@ -136,6 +137,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | <自定义>    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
     sidebar: 'structuring',
+    titleBadge: false, // 长文标题保持干净，减少模板化装饰
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
@@ -197,7 +199,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）
-    ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
+    ['meta', { name: 'theme-color', content: '#0f7c82' }], // 移动浏览器主题颜色
     // [
     //   'script',
     //   {

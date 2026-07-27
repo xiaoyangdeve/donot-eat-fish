@@ -3,8 +3,8 @@ home: true
 # heroImage: /img/web.png
 heroText: 不爱吃鱼的bobo
 tagline: 数据技术、AI大模型、项目管理与编程语言的学习记录。
-# actionText: 立刻进入 →
-# actionLink: /bigdata/
+actionText: 浏览知识地图 →
+actionLink: /data/
 # bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
 features: # 可选的
