@@ -1,6 +1,6 @@
 # donot-eat-fish
 
-个人大数据、数据架构、数据应用与 AI 学习博客。项目基于 VuePress 1、Vue 2 和 `vuepress-theme-vdoing` 构建，发布到：
+个人数据技术、AI大模型、项目管理与编程语言学习博客。项目基于 VuePress 1、Vue 2 和 `vuepress-theme-vdoing` 构建，发布到：
 
 <https://xiaoyangdeve.github.io/donot-eat-fish/>
 
@@ -17,7 +17,7 @@ npm run dev
 ## 检查与构建
 
 ```bash
-# Frontmatter、permalink、图片、密钥和仓库规则检查
+# Frontmatter、受控标签、permalink、图片、密钥和仓库规则检查
 npm run check
 
 # 完整检查、生产构建及构建产物链接审计
@@ -27,7 +27,7 @@ npm run verify
 npm run deploy:dry-run
 ```
 
-`npm run check` 当前会提示 18 篇文章标签为空，但该项属于非阻断内容债务。出现任何 `ERROR` 时会返回非零状态。
+`npm run check` 会强制普通文章使用 2～4 个受控标签，并检查空值、重复值和未登记词。出现任何 `ERROR` 时会返回非零状态。
 
 ## 发布
 
@@ -52,6 +52,7 @@ npm run deploy
 - [项目接管总览](project-docs/README.md)
 - [系统架构与运行链路](project-docs/ARCHITECTURE.md)
 - [内容维护规范](project-docs/CONTENT_GUIDE.md)
+- [标签分类与受控词表](project-docs/TAG_TAXONOMY.md)
 - [开发、构建与发布手册](project-docs/OPERATIONS.md)
 - [本地部署与回滚手册](project-docs/DEPLOYMENT.md)
 - [现状审计与剩余风险](project-docs/AUDIT.md)

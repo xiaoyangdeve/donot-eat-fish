@@ -8,6 +8,7 @@ const ROOT = path.resolve(__dirname, '..')
 const DOCS_ROOT = path.join(ROOT, 'docs')
 const PUBLIC_ROOT = path.join(DOCS_ROOT, '.vuepress', 'public')
 const CONFIG_FILE = path.join(DOCS_ROOT, '.vuepress', 'config.ts')
+const TAG_TAXONOMY_FILE = path.join(ROOT, 'project-docs', 'TAG_TAXONOMY.md')
 const BASE_PATH = '/donot-eat-fish/'
 const SITE_HOSTNAME = 'xiaoyangdeve.github.io'
 
@@ -53,14 +54,42 @@ function scalarField(frontmatter, field) {
   return match ? match[1].trim() : null
 }
 
-function hasTagValue(frontmatter) {
+function unquoteYamlScalar(value) {
+  const trimmed = value.trim()
+  if (trimmed.length >= 2 && trimmed[0] === trimmed[trimmed.length - 1]
+    && (trimmed[0] === '"' || trimmed[0] === "'")) {
+    return trimmed.slice(1, -1).trim()
+  }
+  return trimmed
+}
+
+function extractTags(frontmatter) {
   const inline = frontmatter.match(/^tags:[ \t]*(.*)$/m)
-  if (!inline) return false
-  if (inline[1].trim()) return !/^\[\s*\]$/.test(inline[1].trim())
+  if (!inline) return []
+
+  const inlineValue = inline[1].trim()
+  if (inlineValue) {
+    if (/^\[\s*\]$/.test(inlineValue)) return []
+    if (inlineValue.startsWith('[') && inlineValue.endsWith(']')) {
+      return inlineValue.slice(1, -1).split(',')
+        .map(unquoteYamlScalar)
+        .filter(Boolean)
+    }
+    return [unquoteYamlScalar(inlineValue)].filter(Boolean)
+  }
 
   const afterTags = frontmatter.slice(inline.index + inline[0].length)
-  const block = afterTags.match(/^((?:\r?\n[ \t]+[^\r\n]*)*)/)
-  return Boolean(block && /^[ \t]*-[ \t]*\S+/m.test(block[1]))
+  const tags = []
+
+  for (const line of afterTags.split(/\r?\n/)) {
+    if (!line.trim()) continue
+    const item = line.match(/^[ \t]+-[ \t]*(.*?)\s*$/)
+    if (!item) break
+    const value = unquoteYamlScalar(item[1])
+    if (value) tags.push(value)
+  }
+
+  return tags
 }
 
 function extractImageUrls(markdown) {
@@ -103,7 +132,21 @@ const markdownFiles = walkFiles(DOCS_ROOT, (fullPath, entry) =>
   entry.isDirectory() && fullPath === path.join(DOCS_ROOT, '.vuepress')
 ).filter(file => file.endsWith('.md'))
 
+let allowedTags = new Set()
+if (!fs.existsSync(TAG_TAXONOMY_FILE)) {
+  errors.push(`缺少标签词表：${relative(TAG_TAXONOMY_FILE)}`)
+} else {
+  const taxonomy = fs.readFileSync(TAG_TAXONOMY_FILE, 'utf8')
+  const controlledSection = taxonomy.match(/## 当前受控词表([\s\S]*?)## 逐篇标签基线/)
+  if (!controlledSection) {
+    errors.push(`${relative(TAG_TAXONOMY_FILE)} 缺少“当前受控词表”章节`)
+  } else {
+    allowedTags = new Set([...controlledSection[1].matchAll(/`([^`]+)`/g)].map(match => match[1]))
+  }
+}
+
 const permalinkOwners = new Map()
+const usedTags = new Set()
 let articleCount = 0
 let checkedImageCount = 0
 
@@ -121,7 +164,19 @@ for (const file of markdownFiles) {
       for (const field of ['title', 'date', 'permalink', 'categories', 'tags']) {
         if (!hasField(frontmatter, field)) errors.push(`${relative(file)} 缺少 ${field} 字段`)
       }
-      if (!hasTagValue(frontmatter)) warnings.push(`${relative(file)} 的 tags 为空`)
+      const tags = extractTags(frontmatter)
+      if (tags.length < 2 || tags.length > 4) {
+        errors.push(`${relative(file)} 应设置 2～4 个标签，当前为 ${tags.length} 个`)
+      }
+      if (new Set(tags).size !== tags.length) {
+        errors.push(`${relative(file)} 包含重复标签`)
+      }
+      for (const tag of tags) {
+        usedTags.add(tag)
+        if (!allowedTags.has(tag)) {
+          errors.push(`${relative(file)} 使用未登记标签：${tag}`)
+        }
+      }
     }
 
     const permalink = scalarField(frontmatter, 'permalink')
@@ -188,7 +243,7 @@ if (trackedNodeModules) errors.push('Git 仍在跟踪 node_modules')
 for (const warning of warnings) console.warn(`WARN  ${warning}`)
 for (const error of errors) console.error(`ERROR ${error}`)
 
-console.log(`检查 ${markdownFiles.length} 个 Markdown、${articleCount} 篇文章、${checkedImageCount} 个本地图片引用。`)
+console.log(`检查 ${markdownFiles.length} 个 Markdown、${articleCount} 篇文章、${usedTags.size} 个受控标签、${checkedImageCount} 个本地图片引用。`)
 console.log(`警告 ${warnings.length} 项，错误 ${errors.length} 项。`)
 
 if (errors.length) process.exit(1)

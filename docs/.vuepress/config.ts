@@ -20,7 +20,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     '/': {
       lang: 'zh-CN',
       title: "不爱吃鱼的bobo",
-      description: '大数据技术博客,专注大数据学习与总结。Spark,Iceberg,Flink,Hadoop,Hive,Kafka,HBase,ES等技术文章。',
+      description: '聚焦数据技术、AI大模型、项目管理与编程语言的学习和实践。',
     }
   },
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
@@ -31,58 +31,27 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '首页', link: '/' },
       {
+        text: '数据技术',
+        link: '/data/',
+        items: [
+          { text: '数据管理', link: '/dm/' },
+          { text: '数据架构', link: '/data_structure/' },
+          { text: '数据应用', link: '/data_app/' },
+        ],
+      },
+      {
         text: 'AI大模型',
-        link: '/ai/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        link: '/ai/',
         items: [
-          // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
-          {
-            text: 'Agent',
-            link: '/pages/16b94c/'
-          }
+          { text: 'Agent', link: '/pages/16b94c/' },
         ],
       },
       {
-        text: '数据管理',
-        link: '/dm/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
+        text: '项目管理',
+        link: '/project-management/',
         items: [
-          // 说明：以下所有link的值只是在相应md文件头部定义的永久链接（不是什么特殊编码）。另外，注意结尾是有斜杠的
-          {
-            text: '数字化转型',
-            link: '/pages/193f87/'
-          },
-          {
-            text: '数据治理',
-            link: '/pages/3cb85c/'
-          }
-        ],
-      },
-      {
-        text: '数据架构',
-        link: '/data_structure/',
-        items: [
-          { text: '数据中台', link: '/pages/adcac1/' },
-          { text: '数据平台',
-            items: [
-              { text: 'Spark', link: '/pages/8e0c8a/' },
-              { text: 'Flink', link: '/pages/3b52da/' },
-              { text: 'Trino', link: '/pages/3e0102/' },
-              { text: 'Alluxio', link: '/pages/342fddfd/' },
-            ],
-          },
-          { text: '数据湖仓', link: '/pages/dca12a/' },
-        ],
-      },
-      {
-        text: '数据应用',
-        link: '/data_app/',
-        items: [
-          { text: '用户画像', link: '/pages/81942f/' },
-          { text: 'AB实验', link: '/pages/3f2c9a/' },
-          { text: 'OLAP', link: '/pages/855b59/' },
-          { text: '数据分析', link: '/pages/018612312394/' },
-          // { text: '推荐系统', link: '/pages/adcac1/' },
-          // { text: '算法模型', link: '/pages/adcac1/' },
-          // { text: '知识图谱', link: '/pages/adcac1/' },
+          { text: '预测型项目', link: '/project-management/predictive/' },
+          { text: '敏捷项目', link: '/project-management/agile/' },
         ],
       },
       {
@@ -224,7 +193,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'meta',
       {
         name: 'keywords',
-        content: '前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown',
+        content: '数据技术,数据管理,数据架构,数据应用,大数据,AI大模型,智能体,RAG,项目管理,PMP,敏捷项目,Java,VuePress,技术博客',
       },
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）

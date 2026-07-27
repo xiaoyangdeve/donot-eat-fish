@@ -2,32 +2,28 @@
 home: true
 # heroImage: /img/web.png
 heroText: 不爱吃鱼的bobo
-tagline: 一个数据人，一个AI人，一个大数据人。
+tagline: 数据技术、AI大模型、项目管理与编程语言的学习记录。
 # actionText: 立刻进入 →
 # actionLink: /bigdata/
 # bannerBg: auto # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 
 features: # 可选的
-  # - title: 数据管理
-  #   details: 数据集成、数据治理相关资料
-  #   link: /dm/ # 可选
-  #   imgUrl: /img/data_management/data_management.png # 可选
+  - title: 数据技术
+    details: 数据管理、数据架构与数据应用
+    link: /data/
+    imgUrl: /img/home/data-technology.jpg
   - title: AI大模型
-    details: Transformer、Agent、RAG等
+    details: 大模型、智能体、RAG与工程实践
     link: /ai/
-    imgUrl: /img/ai_big_model/ai_logo.jpg
-  - title: 数据架构
-    details: 数据中台、数据平台、数据湖仓相关技术
-    link: /data_structure/
-    imgUrl: /img/data_lake/data_lake.png
-  - title: 数据应用
-    details: 用户画像、AB实验、OLAP、推荐系统、模型算法、归因算法等相关
-    link: /data_app/
-    imgUrl: /img/data_analysis/data_analysis.jpeg
-  # - title: Java
-  #   details: Java基础、JVM等文章
-  #   link: /java/
-  #   imgUrl: /img/java.png
+    imgUrl: /img/home/ai-large-models.jpg
+  - title: 项目管理
+    details: 预测型项目与敏捷项目
+    link: /project-management/
+    imgUrl: /img/home/project-management.jpg
+  - title: 编程语言
+    details: Java、Python及运行时基础
+    link: /programming/
+    imgUrl: /img/home/programming-languages.jpg
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 # postList: detailed

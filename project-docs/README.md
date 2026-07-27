@@ -20,17 +20,19 @@
 | 生产地址 | `https://xiaoyangdeve.github.io/donot-eat-fish/` |
 | 站点 base | `/donot-eat-fish/` |
 | 默认构建目录 | `docs/.vuepress/dist` |
-| 内容规模 | 41 个 Markdown，其中 32 篇文章 |
-| 静态构建结果 | 42 个 HTML，构建引用检查通过 |
+| 内容规模 | 58 个 Markdown，其中 35 篇普通文章，其余为首页、目录页和知识索引 |
+| 静态构建结果 | 59 个 HTML、6,738 个站内引用，构建检查通过 |
 
 ## 文档阅读顺序
 
 1. [ARCHITECTURE.md](ARCHITECTURE.md)：配置、主题、内容和页面的运行关系。
 2. [CONTENT_GUIDE.md](CONTENT_GUIDE.md)：文章目录、Frontmatter 和资源规范。
-3. [OPERATIONS.md](OPERATIONS.md)：安装、开发、检查、构建和辅助脚本。
-4. [DEPLOYMENT.md](DEPLOYMENT.md)：本地发布、线上验证和回滚流程。
-5. [AUDIT.md](AUDIT.md)：剩余风险、技术债务和后续治理路线。
-6. [GOVERNANCE_LOG.md](GOVERNANCE_LOG.md)：已经执行的治理动作和验收证据。
+3. [TAG_TAXONOMY.md](TAG_TAXONOMY.md)：标签词表、命名规则和逐篇标签基线。
+4. [OPERATIONS.md](OPERATIONS.md)：安装、开发、检查、构建和辅助脚本。
+5. [DEPLOYMENT.md](DEPLOYMENT.md)：本地发布、线上验证和回滚流程。
+6. [HOMEPAGE_ASSETS.md](HOMEPAGE_ASSETS.md)：首页栏目图片、生成语义和替换规范。
+7. [AUDIT.md](AUDIT.md)：剩余风险、技术债务和后续治理路线。
+8. [GOVERNANCE_LOG.md](GOVERNANCE_LOG.md)：已经执行的治理动作和验收证据。
 
 ## 日常命令边界
 
@@ -57,12 +59,12 @@
 - 默认域名、VuePress base、sitemap、百度 URL 生成和仓库链接已经统一。
 - 空 `CNAME` 和 16 个 `.DS_Store` 已移除。
 - 明文百度 token 已从当前工作树删除，但历史中的 token 必须在百度侧作废或轮换。
-- 本地 `main` 已快进对齐 `origin/main` 的 `4c607228`，远端 OpenSSL 兼容提交已纳入历史；重叠的脚本配置按本地治理版本保留。
-- 本轮没有执行 commit、push、真实 deploy、百度推送或 npm 发布。
+- `main` 和 `gh-pages` 已于 2026-07-24 完成受控推送与发布，线上默认 GitHub Pages 地址验证正常。
+- 当前目录与首页治理变更仍处于本地工作区，未执行 commit、push、deploy、百度推送或 npm 发布。
 
 ## 已建立的质量门禁
 
-- `npm run check`：检查 Frontmatter、permalink、图片、时间戳副本、CNAME、域名、明文百度 token 和 `node_modules` 跟踪状态。
+- `npm run check`：检查 Frontmatter、受控标签、permalink、图片、时间戳副本、CNAME、域名、明文百度 token 和 `node_modules` 跟踪状态。
 - `npm run check:dist`：检查 sitemap、HTML/CSS 站内引用、错误 base、CNAME 和系统文件。
 - `npm run verify`：依次执行源码检查、生产构建和构建产物检查。
 - `.github/workflows/ci.yml`：在 `main` 推送和 Pull Request 上执行干净安装与完整验证，不负责部署。
