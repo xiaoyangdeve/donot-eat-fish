@@ -137,4 +137,4 @@ GitHub Pages 发布可能需要数十秒。至少检查：
 
 ## 外部动作状态
 
-截至 2026-07-24，本轮治理尚未执行 commit、push 或真实 `npm run deploy`。
+截至 2026-07-27，最新目录、首页、项目管理知识库和标签治理已完成 `main` 推送与真实 `npm run deploy`，线上默认 GitHub Pages 地址验证正常。

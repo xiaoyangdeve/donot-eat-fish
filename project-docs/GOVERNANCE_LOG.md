@@ -1,5 +1,26 @@
 # 治理实施记录
 
+## 2026-07-27：目录、知识库与标签治理发布
+
+- 将目录重构、首页四列导航与栏目图片、项目管理知识库迁移、全站标签治理和配套文档作为同一批治理成果发布。
+- 源码通过 SSH 推送到 `origin/main`，随后由本地 `npm run deploy` 构建并更新 `gh-pages`。
+- 部署脚本使用 `force-with-lease` 保护 `gh-pages`，发布产物包含 `.nojekyll`，不包含 `CNAME` 或 `.DS_Store`。
+- 默认地址为 `https://xiaoyangdeve.github.io/donot-eat-fish/`，未配置自定义域名。
+
+### 发布验收
+
+| 检查 | 结果 |
+| --- | --- |
+| 源码提交 | `feat: reorganize blog content and governance`，80 个文件变更 |
+| `main` | SSH 推送成功，远端与本地提交一致 |
+| `npm run deploy` | 完整验证、静态构建和 `gh-pages` 推送成功 |
+| 生产构建 | 59 个 HTML、6,738 个站内引用，0 错误 |
+| 线上页面 | 首页、项目管理目录、预测型与敏捷文章、标签页、图片和 sitemap 均返回 HTTP 200 |
+
+### 发布边界
+
+- 未执行百度推送、npm 包发布或依赖升级。
+
 ## 2026-07-27：全站文章标签治理
 
 - 只调整 35 篇普通文章 Frontmatter 中的 `tags`，未修改标题、正文、日期、目录、分类或 permalink。
