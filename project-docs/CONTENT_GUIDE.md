@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | `10.数据技术` | `/data/` | 数据管理、数据架构、数据应用 |
 | `20.AI大模型` | `/ai/` | 大模型、Agent、RAG 与工程实践 |
-| `30.项目管理` | `/project-management/` | 预测型项目、敏捷项目 |
+| `30.项目管理` | `/project-management/` | 预测型项目、敏捷项目与跨生命周期管理原则 |
 | `40.编程语言` | `/programming/` | 当前主要是 Java/JVM |
 
 `10.数据技术` 下使用 `01.数据管理`、`02.数据架构` 和 `03.数据应用` 组织原有内容。`/dm/`、`/data_structure/` 和 `/data_app/` 继续作为兼容目录页保留。
@@ -24,6 +24,7 @@
   00.概览.md
   01.原则与思维/
   02.方法与规模化/
+03.PMBOK第七版项目管理12项原则.md
 ```
 
 目录以现有实质内容为准，不为尚未撰写的主题预建空目录或提纲式占位文章。新增主题形成至少一篇有效正文后，再建立对应目录。
@@ -170,6 +171,7 @@ npm run verify
 docs/.vuepress/public/img/project-management/
   predictive/  # 预测型项目
   agile/       # 敏捷项目，规模化方法图片位于 methods-scaling/
+  pmbok7-*.png # 跨预测型、敏捷型与混合型项目的 PMBOK 第七版内容
 ```
 
 文件名使用可读的英文小写短横线格式。Markdown 正文按当前部署方式引用 `/donot-eat-fish/img/project-management/...`，不得保留下载目录绝对路径、文章旁的 `assets/` 或 `images/` 临时目录。
