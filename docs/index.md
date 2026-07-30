@@ -17,7 +17,7 @@ features: # 可选的
     link: /ai/
     imgUrl: /img/home/ai-large-models.jpg
   - title: 项目管理
-    details: 预测型、敏捷、PMBOK与PMP考前冲刺
+    details: 基础框架、预测型、敏捷混合与PMP认证备考
     link: /project-management/
     imgUrl: /img/home/project-management.jpg
   - title: 编程语言

@@ -50,9 +50,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         text: '项目管理',
         link: '/project-management/',
         items: [
-          { text: '预测型项目', link: '/project-management/predictive/' },
-          { text: '敏捷项目', link: '/project-management/agile/' },
-          { text: 'PMP考前冲刺', link: '/project-management/pmp-exam/' },
+          { text: '项目管理基础', link: '/project-management/foundations/' },
+          { text: '预测型项目管理', link: '/project-management/predictive/' },
+          { text: '敏捷与混合型项目管理', link: '/project-management/agile/' },
+          { text: 'PMP认证备考', link: '/project-management/pmp-exam/' },
         ],
       },
       {
@@ -188,7 +189,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       'meta',
       {
         name: 'keywords',
-        content: '数据技术,数据管理,数据架构,数据应用,大数据,AI大模型,智能体,RAG,项目管理,PMP,敏捷项目,Java,VuePress,技术博客',
+        content: '数据技术,数据管理,数据架构,数据应用,大数据,AI大模型,智能体,RAG,项目管理,预测型项目管理,敏捷与混合型项目管理,PMP认证备考,Java,VuePress,技术博客',
       },
     ],
     ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站长验证（你可以去掉）

@@ -7,6 +7,12 @@ const ROOT = path.resolve(__dirname, '..')
 const DIST_ROOT = path.resolve(ROOT, process.argv[2] || 'docs/.vuepress/dist')
 const BASE_PATH = '/donot-eat-fish/'
 const SITE_URL = 'https://xiaoyangdeve.github.io/donot-eat-fish/'
+const PROJECT_MANAGEMENT_SECTIONS = [
+  { title: '项目管理基础', route: 'project-management/foundations/' },
+  { title: '预测型项目管理', route: 'project-management/predictive/' },
+  { title: '敏捷与混合型项目管理', route: 'project-management/agile/' },
+  { title: 'PMP认证备考', route: 'project-management/pmp-exam/' },
+]
 const errors = []
 
 function walkFiles(root) {
@@ -63,6 +69,33 @@ function resolveHtmlTarget(url, owner) {
 
 for (const required of ['index.html', 'sitemap.xml']) {
   if (!fs.existsSync(path.join(DIST_ROOT, required))) errors.push(`构建产物缺少 ${required}`)
+}
+
+const homePath = path.join(DIST_ROOT, 'index.html')
+const projectManagementPath = path.join(DIST_ROOT, 'project-management', 'index.html')
+if (fs.existsSync(homePath)) {
+  const home = fs.readFileSync(homePath, 'utf8')
+  for (const section of PROJECT_MANAGEMENT_SECTIONS) {
+    const href = `${BASE_PATH}${section.route}`
+    const navigationOccurrences = home.split(`href="${href}"`).length - 1
+    if (navigationOccurrences < 2) {
+      errors.push(`首页桌面或移动导航缺少项目管理入口：${section.title}（${href}）`)
+    }
+
+    const landingPage = path.join(DIST_ROOT, section.route, 'index.html')
+    if (!fs.existsSync(landingPage)) {
+      errors.push(`项目管理模块缺少入口页：${section.title}（${section.route}）`)
+    }
+  }
+}
+if (fs.existsSync(projectManagementPath)) {
+  const projectManagement = fs.readFileSync(projectManagementPath, 'utf8')
+  for (const section of PROJECT_MANAGEMENT_SECTIONS) {
+    const href = `${BASE_PATH}${section.route}`
+    if (!projectManagement.includes(`href="${href}"`)) {
+      errors.push(`项目管理目录页缺少模块：${section.title}（${href}）`)
+    }
+  }
 }
 
 if (fs.existsSync(path.join(DIST_ROOT, 'CNAME'))) {
