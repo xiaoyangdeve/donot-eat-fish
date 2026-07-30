@@ -17,7 +17,7 @@ features: # 可选的
     link: /ai/
     imgUrl: /img/home/ai-large-models.jpg
   - title: 项目管理
-    details: 预测型项目与敏捷项目
+    details: 预测型、敏捷、PMBOK与PMP考前冲刺
     link: /project-management/
     imgUrl: /img/home/project-management.jpg
   - title: 编程语言
@@ -26,7 +26,7 @@ features: # 可选的
     imgUrl: /img/home/programming-languages.jpg
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
-# postList: detailed
+postList: detailed
 # simplePostListLength: 10 # 简约版文章列表显示的文章数量，默认10。（仅在postList设置为simple时生效）
 # hideRightBar: true # 是否隐藏右侧边栏
 ---

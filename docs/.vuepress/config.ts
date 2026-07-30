@@ -52,6 +52,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         items: [
           { text: '预测型项目', link: '/project-management/predictive/' },
           { text: '敏捷项目', link: '/project-management/agile/' },
+          { text: 'PMP考前冲刺', link: '/project-management/pmp-exam/' },
         ],
       },
       {
